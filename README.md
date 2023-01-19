@@ -12,9 +12,10 @@
 
 ## Tech Stack
 
-[![Hardhat](https://img.shields.io/badge/Hardhat-FFFF00?style=for-the-badge&logo=Hardhat&logoColor=black)](https://hardhat.org/docs)
 [![Solidity](https://img.shields.io/badge/Solidity-00BFFF?style=for-the-badge&logo=Solidity&logoColor=black)](https://docs.soliditylang.org/en/v0.8.17/)
 [![Javascript](https://img.shields.io/badge/javascript-FFFF00?style=for-the-badge&logo=javascript&logoColor=black)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+[![Hardhat](https://img.shields.io/badge/Hardhat-FFFF00?style=for-the-badge)](https://hardhat.org/docs)
+[![OpenZeppelin](https://img.shields.io/badge/openzeppelin-0000FF?style=for-the-badge)](https://docs.openzeppelin.com/contracts/4.x/erc20)
 
 ## Hardhat Setup
 
