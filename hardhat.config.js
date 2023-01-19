@@ -11,46 +11,47 @@ require("dotenv").config()
  */
 
 const GOERLI_RPC_URL = process.env.GOERLI_RPC_URL
-const PRIVATE_KEY = process.env.PRIVATE_KEY || "0x"
+const PRIVATE_KEY = process.env.PRIVATE_KEY
+const ETHERSCAN_API_KEY = process.env.ETHERSCAN_API_KEY
+
+// API key to make gas convertions to USD
+const COINMARKETCAP_API_KEY = process.env.COINMARKETCAP_API_KEY
 
 module.exports = {
-    defaultNetwork: "localhost",
+    defaultNetwork: "hardhat",
     networks: {
         hardhat: {
             chainId: 31337,
+            blockConfirmations: 1,
         },
         localhost: {
             chainId: 31337,
-            url: "http://127.0.0.1:8545/",
         },
         goerli: {
             url: GOERLI_RPC_URL,
-            accounts: PRIVATE_KEY !== undefined ? [PRIVATE_KEY] : [],
+            accounts: [PRIVATE_KEY],
             saveDeployments: true,
             chainId: 5,
             blockConfirmations: 6,
-            gas: 2100000,
-            gasPrice: 8000000000,
         },
+    },
+    etherscan: {
+        apiKey: ETHERSCAN_API_KEY,
     },
     gasReporter: {
         enabled: true,
         currency: "USD",
         outputFile: "gas-report.txt",
         noColors: true,
+        coinmarketcap: COINMARKETCAP_API_KEY,
     },
     namedAccounts: {
         deployer: {
             default: 0,
         },
-        user: {
+        user1: {
             default: 1,
         },
     },
-    solidity: {
-        compilers: [{ version: "0.8.17" }],
-    },
-    mocha: {
-        timeout: 2000000,
-    },
+    solidity: "0.8.7",
 }
