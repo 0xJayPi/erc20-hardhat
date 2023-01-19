@@ -15,10 +15,9 @@ module.exports = async function () {
         waitConfirmations: network.config.blockConfirmations || 1,
     })
 
-    // if (!developmentChains.includes(network.name) && process.env.ETHERSCAN_API_KEY) {
-    //     log("Verifying contract...")
-    //     await verify(ourToken.address, arguments)
-    // }
+    if (!developmentChains.includes(network.name) && process.env.ETHERSCAN_API_KEY) {
+        await verify(ourToken.address, arguments)
+    }
 }
 
 module.exports.tags = ["all"]
