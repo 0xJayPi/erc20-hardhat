@@ -10,6 +10,12 @@
   - You'll know you've installed yarn right if you can run:
     - `yarn --version` And get an output like `x.x.x`
 
+## Tech Stack
+
+[![Hardhat](https://img.shields.io/badge/Hardhat-FFFF00?style=for-the-badge&logo=Hardhat&logoColor=black)](https://hardhat.org/docs)
+[![Solidity](https://img.shields.io/badge/Solidity-00BFFF?style=for-the-badge&logo=Solidity&logoColor=black)](https://docs.soliditylang.org/en/v0.8.17/)
+[![Javascript](https://img.shields.io/badge/javascript-FFFF00?style=for-the-badge&logo=javascript&logoColor=black)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+
 ## Hardhat Setup
 
 * Run ```yarn add --dev @nomiclabs/hardhat-ethers@npm:hardhat-deploy-ethers ethers @nomiclabs/hardhat-etherscan @nomiclabs/hardhat-waffle chai ethereum-waffle hardhat hardhat-contract-sizer hardhat-deploy hardhat-gas-reporter prettier prettier-plugin-solidity solidity-coverage dotenv```.
@@ -45,7 +51,7 @@ Head over to [goerlifaucet.com/](https://goerlifaucet.com/) and get some tesnet 
 hh deploy --network goerli
 ```
 
-# Verify on etherscan
+## Verify on etherscan
 
 If you deploy to a testnet or mainnet, you can verify it if you get an [API Key](https://etherscan.io/myapikey) from Etherscan and set it as an environemnt variable named `ETHERSCAN_API_KEY`. 
 
@@ -56,6 +62,10 @@ However, you can manual verify with:
 ```
 hh verify --constructor-args arguments DEPLOYED_CONTRACT_ADDRESS
 ```
+# Scripts
+
+```hh run scripts/mint.js```: Mint tokens and transfer them to the deployer (update constants accordingly)
+```hh run scripts/transfer.js```: Transfer tokens to an address (update constants accordingly)
 
 # Thank you!
 
