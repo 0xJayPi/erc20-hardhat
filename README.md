@@ -1,3 +1,10 @@
+# JP ERC20 Token
+
+This is a sample project to deploy a new ERC20 token.
+
+# Sample Contract in Goerli
+
+OurToken at [goerli.etherscan.io](https://goerli.etherscan.io/address/0x5352f3B4554060516F5bc01a75340b5648Fa65a1#code)
 
 # Getting Started
 
