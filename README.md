@@ -63,6 +63,8 @@ However, you can manual verify with:
 ```
 hh verify --constructor-args arguments DEPLOYED_CONTRACT_ADDRESS
 ```
+See [Verifying your contracts](https://hardhat.org/hardhat-runner/docs/guides/verifying) for updated information.
+
 ## Scripts
 
 * ```hh run scripts/mint.js```: Mint tokens and transfer them to the deployer (update constants accordingly)
