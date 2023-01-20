@@ -11,10 +11,10 @@ async function main() {
     const tx = await ourToken.mint(tokens)
     await tx.wait(1)
 
-    const finalSupply = await ourToken.totalSupply()
-    const finalBalance = await ourToken.balanceOf(deployer)
+    const finalSupply = ethers.utils.formatUnits(await ourToken.totalSupply(), "ether")
+    const finalBalance = ethers.utils.formatUnits(await ourToken.balanceOf(deployer), "ether")
     console.log(
-        `*UPDATED* Total Supply: ${finalSupply} wei | Deployer Balance: ${finalBalance} wei`
+        `*UPDATED* Total Supply: ${finalSupply} JPC's | Deployer Balance: ${finalBalance} JPC's`
     )
 }
 

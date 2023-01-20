@@ -11,8 +11,8 @@ async function main() {
     const tx = await ourToken.transfer(addressTo, tokens)
     await tx.wait(1)
 
-    const balanceTo = await ourToken.balanceOf(addressTo)
-    console.log(`Balance of ${addressTo} is now ${balanceTo}`)
+    const balanceTo = ethers.utils.formatUnits(await ourToken.balanceOf(addressTo), "ether")
+    console.log(`Balance of ${addressTo} is now ${balanceTo} JPC's`)
 }
 
 main()
