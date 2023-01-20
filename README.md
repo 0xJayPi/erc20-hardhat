@@ -31,7 +31,7 @@ OurToken at [goerli.etherscan.io](https://goerli.etherscan.io/address/0x5352f3B4
 
 # Usage
 
-## Deploy
+## Deploy to Hardhat
 
 ```
 hh deploy
