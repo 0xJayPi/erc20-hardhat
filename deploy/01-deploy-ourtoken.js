@@ -3,7 +3,7 @@ const { developmentChains } = require("../helper-hardhat-config")
 const { verify } = require("../utils/verify")
 
 module.exports = async function () {
-    const { deploy, log } = deployments
+    const { deploy } = deployments
     const { deployer } = await getNamedAccounts()
     const INITIAL_SUPPLY = ethers.utils.parseEther("10000")
     const arguments = [INITIAL_SUPPLY]
