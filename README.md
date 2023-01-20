@@ -36,11 +36,11 @@ hh deploy
 
 You'll want to set below parameters in your `.env` file.
 
-- `PRIVATE_KEY`: The private key of your account.
-- `MAINNET_RPC_URL`: This is url of the mainnet node you're working with.
-- `GOERLI_RPC_URL`: This is url of the goerli testnet node you're working with.
-- `ETHERSCAN_API_KEY`: This is the KEY you generate from etherscan.io. To be used to verify the contracts on testnet and mainnet.
-- `COINMARKETCAP_API_KEY`: This is the KEY you generate from coinmarketcap.com. To be used to do quick USD calculations for gas usage.
+* `PRIVATE_KEY`: The private key of your account.
+* `MAINNET_RPC_URL`: This is url of the mainnet node you're working with.
+* `GOERLI_RPC_URL`: This is url of the goerli testnet node you're working with.
+* `ETHERSCAN_API_KEY`: This is the KEY you generate from etherscan.io. To be used to verify the contracts on testnet and mainnet.
+* `COINMARKETCAP_API_KEY`: This is the KEY you generate from coinmarketcap.com. To be used to do quick USD calculations for gas usage.
 
 2. Get testnet ETH
 
@@ -63,10 +63,10 @@ However, you can manual verify with:
 ```
 hh verify --constructor-args arguments DEPLOYED_CONTRACT_ADDRESS
 ```
-# Scripts
+## Scripts
 
-```hh run scripts/mint.js```: Mint tokens and transfer them to the deployer (update constants accordingly)
-```hh run scripts/transfer.js```: Transfer tokens to an address (update constants accordingly)
+* ```hh run scripts/mint.js```: Mint tokens and transfer them to the deployer (update constants accordingly)
+* ```hh run scripts/transfer.js```: Transfer tokens to an address (update constants accordingly)
 
 # Thank you!
 
