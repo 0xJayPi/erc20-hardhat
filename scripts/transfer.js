@@ -3,8 +3,7 @@ const AMOUNT_TO_TRANSFER = "10"
 const addressTo = "0x9606e11178a83C364108e99fFFD2f7F75C99d801"
 
 async function main() {
-    const accounts = await getNamedAccounts()
-    deployer = accounts.deployer
+    const { deployer } = await getNamedAccounts()
     const ourToken = await ethers.getContract("OurToken", deployer)
     const tokens = await ethers.utils.parseEther(AMOUNT_TO_TRANSFER)
 

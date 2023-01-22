@@ -33,6 +33,11 @@ OurToken at [goerli.etherscan.io](https://goerli.etherscan.io/address/0x5352f3B4
 
 ## Deploy to Hardhat
 
+Localhost is the default used, which already deploys contracts when initiated:
+```
+hh node --network hardhat
+```
+When needing to deploy again:
 ```
 hh deploy
 ```
