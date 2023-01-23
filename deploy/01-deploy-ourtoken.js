@@ -1,11 +1,11 @@
 const { getNamedAccounts, network } = require("hardhat")
 const { developmentChains } = require("../helper-hardhat-config")
 const { verify } = require("../utils/verify")
+const INITIAL_SUPPLY = ethers.utils.parseEther("10000")
 
 module.exports = async function () {
     const { deploy } = deployments
     const { deployer } = await getNamedAccounts()
-    const INITIAL_SUPPLY = ethers.utils.parseEther("10000")
     const arguments = [INITIAL_SUPPLY]
 
     const ourToken = await deploy("OurToken", {
