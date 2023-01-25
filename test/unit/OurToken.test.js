@@ -1,4 +1,4 @@
-const { assert } = require("chai")
+const { assert, expect } = require("chai")
 const { getNamedAccounts, deployments, ethers, network } = require("hardhat")
 const { developmentChains } = require("../../helper-hardhat-config")
 
@@ -13,6 +13,7 @@ const { developmentChains } = require("../../helper-hardhat-config")
               deployer = accounts.deployer
               user1 = accounts.user1
               ourToken = await ethers.getContract("OurToken", deployer)
+              ourTokenUser1 = await ethers.getContract("OurToken", user1)
           })
 
           describe("constructor", () => {
@@ -32,6 +33,21 @@ const { developmentChains } = require("../../helper-hardhat-config")
                   await ourToken.transfer(user1, tokensToSend)
                   const user1Balance = await ourToken.balanceOf(user1)
                   assert.equal(user1Balance.toString(), tokensToSend)
+              })
+          })
+
+          describe("mint", () => {
+              it("Should be able to mint more tokens", async () => {
+                  const supply = await ourToken.totalSupply()
+                  const tokensToMint = ethers.utils.parseEther("10")
+                  await ourToken.mint(tokensToMint)
+                  const newSupply = await ourToken.totalSupply()
+                  assert.equal(tokensToMint.toString(), newSupply.sub(supply).toString())
+              })
+
+              it("Only Owner can mint", async () => {
+                  const tokensToMint = ethers.utils.parseEther("10")
+                  await expect(ourTokenUser1.mint(tokensToMint)).to.be.reverted
               })
           })
       })
